@@ -1,11 +1,13 @@
-<script>
-import { cards } from "./store.js"
+<script lang="">
+import { cards } from "./store.js";
+import AppHeader from "./components/AppHeader.vue";
+import AppMain from "./components/AppMain.vue";
 
 export default{
-  data(){
-    return{
-      cards,
-    }
+  components: {
+    cards,
+    AppHeader,
+    AppMain,
   }
 }
 
@@ -13,7 +15,8 @@ export default{
 
 <template>
   <div>
-
+    <AppHeader />
+    <AppMain />
   </div>
 </template>
 
