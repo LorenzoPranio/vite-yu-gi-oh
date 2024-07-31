@@ -10,6 +10,6 @@ export default {
     </div>
 </template>
 
-<style lang="scss">
-    @use './styles/generals.scss'
+<style lang="scss" scoped>
+@use '../styles/partials/variables.scss';
 </style>
