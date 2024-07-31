@@ -32,7 +32,7 @@ export default{
                 <div class="row">
                     <div class="col-12 pad-3rem bg-white">
                         <div class="col-12 p-2 bg-black">
-                            <h5>Found {{ counter }} cards</h5>
+                            <h5>Found {{ cards.cardsarray.length }} cards</h5>
                         </div>
                     </div>
                 </div>
