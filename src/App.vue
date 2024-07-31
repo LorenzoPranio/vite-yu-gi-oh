@@ -1,4 +1,13 @@
-<script setup>
+<script>
+import { cards } from "./store.js"
+
+export default{
+  data(){
+    return{
+      cards,
+    }
+  }
+}
 
 </script>
 
