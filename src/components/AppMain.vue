@@ -81,4 +81,8 @@ export default{
 .pad-3rem{
     padding: 3rem 3rem 0px 3rem;
 }
+.card-body{
+    height: 130px;
+    margin-bottom: 20px;
+}
 </style>
