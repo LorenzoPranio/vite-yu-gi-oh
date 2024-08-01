@@ -1,4 +1,4 @@
-<script lang="">
+<script>
 import { cards } from "./store.js";
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
@@ -15,17 +15,20 @@ export default{
     AppMain
   },
   created(){
-  this.get_cards()
+  this.get_cards(),
+  this.get_archetypes()
   },
   methods:{
     get_cards(){
       axios.get(cards.apiUrl).then((result) =>
       {cards.cardsarray = result.data.data})
     },
+    get_archetypes(){
+      axios.get(cards.apiArchetypes).then((result) =>
+      {cards.archetypesarray = result.data})
+    }
   }
 }
-
-
 </script>
 
 <template>
