@@ -37,7 +37,7 @@ export default{
 <template>
   <div>
     <AppHeader />
-    <AppMain />
+    <AppMain @filter="sendarchetypes"/>
   </div>
 </template>
 

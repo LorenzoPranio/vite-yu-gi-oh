@@ -5,7 +5,12 @@ export default{
     return{
       cards
     }
-  }
+  },
+  methods: {
+    sendarchetypes(){
+        this.$emit('filter')
+    }
+  },
 }
 </script>
 
@@ -16,13 +21,10 @@ export default{
                 <div class="row">
                     <div class="col-12 p-3">
                         <div class="input-group ms-4">
-                            <select class="custom-select text-start">
-                                <option value="0">
-                                    <h3 class="text-start">Alien</h3>
+                            <select class="select-control text-start" v-for="archetypes in archetypesarray" :key="index" v-model="cards.archetypestypes" @change="sendarchetypes()">
+                                <option value="">
+                                    <h3 class="text-start"></h3>
                                 </option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
                             </select>
                         </div>
                     </div>
@@ -57,7 +59,7 @@ export default{
 
 .bg-orange{
     background-color: variables.$primary-color;
-    .custom-select{
+    .select-control{
         border-radius: 5px;
         border: none;
         padding: 10px 80px 10px 5px;
