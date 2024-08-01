@@ -28,7 +28,7 @@ export default{
       { for (let i = 1; i = 10; i++ ){
           cards.archetypesarray.push(result.data[i].archetype_name)
         }
-      })
+      });
     }
   }
 }
@@ -37,7 +37,7 @@ export default{
 <template>
   <div>
     <AppHeader />
-    <AppMain @filter="sendarchetypes"/>
+    <AppMain />
   </div>
 </template>
 
