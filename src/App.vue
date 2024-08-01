@@ -25,7 +25,10 @@ export default{
     },
     get_archetypes(){
       axios.get(cards.apiArchetypes).then((result) =>
-      {cards.archetypesarray = result.data})
+      { for (let i = 1; i = 10; i++ ){
+          cards.archetypesarray.push(result.data[i].archetype_name)
+        }
+      })
     }
   }
 }
