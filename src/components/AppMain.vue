@@ -5,7 +5,13 @@ export default{
     return{
       cards
     }
-  }
+  },
+  emits: ['filter'],
+  methods: {
+    sendarchetypes(){
+        this.$emit('filter')
+    }
+  },
 }
 </script>
 
@@ -16,13 +22,11 @@ export default{
                 <div class="row">
                     <div class="col-12 p-3">
                         <div class="input-group ms-4">
-                            <select class="custom-select text-start">
-                                <option value="">
-                                    <h3 class="text-start">Seleziona un archetipo</h3>
+                            <select class="custom-select text-start" v-model="cards.archetypestatus" @change="sendarchetypes()">
+                                <option selected class="text-danger">Scegli un archetipo</option>
+                                <option v-for="arche in cards.archetypesarray" :value="arche">
+                                    {{ arche }}
                                 </option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
                             </select>
                         </div>
                     </div>

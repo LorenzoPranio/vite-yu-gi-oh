@@ -20,12 +20,15 @@ export default{
   },
   methods:{
     get_cards(){
+      if(cards.archetypestatus != ''){
+        cards.apiUrl += `&archetype=${cards.archetypestatus}`
+      }
       axios.get(cards.apiUrl).then((result) =>
       {cards.cardsarray = result.data.data})
     },
     get_archetypes(){
       axios.get(cards.apiArchetypes).then((result) =>
-      { for (let i = 1; i = 10; i++ ){
+      { for (let i = 0; i < 10; i++ ){
           cards.archetypesarray.push(result.data[i].archetype_name)
         }
       });
@@ -37,7 +40,7 @@ export default{
 <template>
   <div>
     <AppHeader />
-    <AppMain />
+    <AppMain @filter="get_cards" />
   </div>
 </template>
 
